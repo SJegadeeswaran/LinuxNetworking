@@ -1,0 +1,12 @@
+Issue: Minikube is installed in a local machine and after some days, the tun0 network conflicts with office network.
+
+Solution1:
+sudo ip link delete tun0 
+Restart the machine
+
+Solution2:
+sudo ifconfig tun0 down
+sudo ip link set tun0 down
+sudo ip link delete tun0
+sudo systemctl restart systemd-networkd
+Restart the machine.
